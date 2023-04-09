@@ -21,7 +21,7 @@ contract TodoListForAllSaveGas {
     }
 
     // 當有三個元素存在在 taskBook 中， update 第三筆資料需要的 gas 約 56760 gas, 減少 12638 gas 
-    // 第二次 update 第三筆資料需要的 gas 約 42602 gas, 與第一次相同減少 12638 gas Ｆ
+    // 第二次 update 第三筆資料需要的 gas 約 42602 gas, 與第一次相同減少 12638 gas
     function update(string calldata name, bool completed) public {
         Task[] storage list = taskBook[msg.sender];
         uint256 index = taskIndex[msg.sender][name];
