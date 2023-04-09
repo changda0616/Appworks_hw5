@@ -18,11 +18,12 @@ contract TodoListForOne {
         require(msg.sender == owner);
         _;
     }
-
+    // 當有三個元素存在在 taskBook 中， create 一次需要的 gas 約 62838 gas
     function create(string calldata name) public onlyOwner {
         list.push(Task({name: name, completed: false}));
     }
-
+    
+    // 當有三個元素存在在 taskBook 中， update 一次需要的 gas 約 71748 gas
     function update(string calldata name, bool completed) public onlyOwner {
         for (uint256 i = 0; i < list.length; i++) {
             if (compareStrings(list[i].name, name)) {
