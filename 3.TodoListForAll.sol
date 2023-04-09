@@ -36,7 +36,7 @@ contract TodoListForAll {
     }
 
     function compareStrings(string memory a, string memory b)
-        public
+        private
         pure
         returns (bool)
     {
